@@ -174,7 +174,6 @@ LINES_TO_READ_COUNT = 10
 with open(FILE_NAME, "r") as f:
     f.seek(0, os.SEEK_END)
     while True:
-        current_position = f.tell()
         line = f.readline()
         sys.stdout.write(line)
 ```
@@ -204,7 +203,6 @@ SLEEP_DELAY = 0.5
 with open(FILE_NAME, "r") as f:
     f.seek(0, os.SEEK_END)
     while True:
-        current_position = f.tell()
         line = f.readline()
         if not line:
             time.sleep(SLEEP_DELAY)
