@@ -6,6 +6,7 @@ authors = ["Vsevolod Bazhan <vsevozhan@yandex.ru>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+typer = "^0.3.2"
 
 [tool.poetry.dev-dependencies]
 filprofiler = "^2021.5.0"
