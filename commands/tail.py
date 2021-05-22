@@ -1,5 +1,6 @@
 import os
 import sys
+import time
 from queue import LifoQueue
 
 
@@ -32,6 +33,8 @@ class Tail:
 
     def __call__(self) -> None:
         self.tail()
+        if self.follow:
+            self.perform_follow()
 
     def tail(self) -> None:
         with open(self.file_name, "rb") as f:
@@ -74,4 +77,14 @@ class Tail:
                     sys.stdout.write(os.linesep)
                 first = False
                 line = lines.get().decode()
+                sys.stdout.write(line)
+
+    def perform_follow(self) -> None:
+        with open(self.file_name, "r") as f:
+            f.seek(0, os.SEEK_END)
+            while True:
+                line = f.readline()
+                # If the received line is empty -- sleep to ease the CPU load.
+                if not line:
+                    time.sleep(self.sleep_delay)
                 sys.stdout.write(line)
