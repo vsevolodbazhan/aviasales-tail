@@ -7,7 +7,6 @@ authors = ["Vsevolod Bazhan <vsevozhan@yandex.ru>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 typer = "^0.3.2"
-bandit = "^1.7.0"
 
 [tool.poetry.dev-dependencies]
 filprofiler = "^2021.5.0"
@@ -16,6 +15,7 @@ mypy = "^0.812"
 flake8 = "^3.9.2"
 tqdm = "^4.60.0"
 isort = "^5.8.0"
+bandit = "^1.7.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
