@@ -150,7 +150,7 @@ with open(FILE_NAME, "rb") as f:
 
 ![](img/read_from_end_as_bytes_memory_usage_10.png)
 
-Тем не менее, строки все же сохраняются в памяти, а не выводятся сразу после их прочтения. Соотвественно, количество потребляемой памяти будет зависисеть от количество строк, которое хотим прочитать.
+Тем не менее, строки все же сохраняются в памяти, а не выводятся сразу после их прочтения. Соотвественно, количество потребляемой памяти будет зависисеть от количества строк, которое хотим прочитать.
 
 При 1000 строк, потребление памяти увеличивается.
 
@@ -209,24 +209,24 @@ with open(FILE_NAME, "r") as f:
         sys.stdout.write(line)
 ```
 
-### Использование
+## Использование
 
 Создайте и активируйте виртуальное окружение:
 
-```console
+```bash
 python -m venv env
 source env/bin/activiate
 ```
 
 Установите зависимости:
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
 Запустите утилиту:
 
-```console
+```bash
 python tail.py
 ```
 
@@ -241,13 +241,13 @@ Error: Missing argument 'FILE_NAME'.
 
 Передайте название файла (например, из `samples`):
 
-```console
+```bash
 python tail.py samples/titanic_5_lines.csv
 ```
 
 Пример использования вместе с [`csvkit`](https://csvkit.readthedocs.io/en/latest/).
 
-```console
+```bash
 python tail.py samples/titanic_5_lines.csv | csvcut -c PassengerId,Survived | csvlook
 ```
 
@@ -262,6 +262,6 @@ python tail.py samples/titanic_5_lines.csv | csvcut -c PassengerId,Survived | cs
 
 Использование с флагом `-f`:
 
-```console
+```bash
 python tail.py -f samples/titanic_5_lines.csv
 ```
