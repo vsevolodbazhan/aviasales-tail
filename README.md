@@ -208,3 +208,60 @@ with open(FILE_NAME, "r") as f:
             time.sleep(SLEEP_DELAY)
         sys.stdout.write(line)
 ```
+
+### Использование
+
+Создайте и активируйте виртуальное окружение:
+
+```console
+python -m venv env
+source env/bin/activiate
+```
+
+Установите зависимости:
+
+```
+pip install -r requirements.txt
+```
+
+Запустите утилиту:
+
+```console
+python tail.py
+```
+
+```
+Usage: tail.py [OPTIONS] FILE_NAME
+Try 'tail.py --help' for help.
+
+Error: Missing argument 'FILE_NAME'.
+```
+
+*Примечание*. Флаг `--help` работает.
+
+Передайте название файла (например, из `samples`):
+
+```console
+python tail.py samples/titanic_5_lines.csv
+```
+
+Пример использования вместе с [`csvkit`](https://csvkit.readthedocs.io/en/latest/).
+
+```console
+python tail.py samples/titanic_5_lines.csv | csvcut -c PassengerId,Survived | csvlook
+```
+
+```
+| PassengerId | Survived |
+| ----------- | -------- |
+|           1 |    False |
+|           2 |     True |
+|           3 |     True |
+|           4 |     True |
+```
+
+Использование с флагом `-f`:
+
+```console
+python tail.py -f samples/titanic_5_lines.csv
+```
