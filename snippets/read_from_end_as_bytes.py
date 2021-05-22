@@ -11,7 +11,7 @@ with open(FILE_NAME, "rb") as f:
     # Init temporary buffer for individual bytes.
     buffer = bytearray()
     # Init stack to store lines.
-    lines = LifoQueue()
+    lines: LifoQueue = LifoQueue()
 
     current_position = f.tell()
     # Keep reading the file until the start of the file is reached
