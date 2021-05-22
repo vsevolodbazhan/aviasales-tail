@@ -12,3 +12,6 @@ fil-result
 
 # macOS
 .DS_Store
+
+# Env
+env
