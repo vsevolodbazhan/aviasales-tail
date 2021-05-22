@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "tail"
+version = "0.1.0"
+description = "Simplified implementation of the `tail` utility."
+authors = ["Vsevolod Bazhan <vsevozhan@yandex.ru>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+filprofiler = "^2021.5.0"
+black = "^21.5b1"
+mypy = "^0.812"
+flake8 = "^3.9.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
